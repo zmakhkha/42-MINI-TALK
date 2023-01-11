@@ -1,2 +1,10 @@
 # MINI-TALK
-The purpose of this project is to code a small data exchange program using UNIX signals for peaceful purposes.
+<img src="Subject/en.subject-1.jpg"/>
+<img src="Subject/en.subject-2.jpg"/>
+<img src="Subject/en.subject-3.jpg"/>
+<img src="Subject/en.subject-4.jpg"/>
+<img src="Subject/en.subject-5.jpg"/>
+<img src="Subject/en.subject-6.jpg"/>
+<img src="Subject/en.subject-7.jpg"/>
+<img src="Subject/en.subject-8.jpg"/>
+<img src="Subject/en.subject-9.jpg"/>
