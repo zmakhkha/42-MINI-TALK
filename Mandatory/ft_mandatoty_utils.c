@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aaa.c                                              :+:      :+:    :+:   */
+/*   ft_mandatoty_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 13:04:46 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/11 13:06:01 by zmakhkha         ###   ########.fr       */
+/*   Created: 2023/01/11 19:06:32 by zmakhkha          #+#    #+#             */
+/*   Updated: 2023/01/11 19:08:14 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<libc.h>
+#include "mandatory.h"
 
-void print()
+void	signal_handler(int signum)
 {
-	printf("test");
+	if (signum == SIGUSR1)
+	{
+		printf("The client is sending ....!\n");
+	}
+	if (signum == SIGUSR2)
+	{
+		printf("Attention the Server is talking ....!\n");
+	}
 }

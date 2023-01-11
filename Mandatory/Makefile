@@ -3,7 +3,7 @@ LIBFT_PATH = ../libft
 CL_NAME = Client
 SRV_NAME = Server
 
-SRC = aaa.c	
+SRC = ft_mandatoty_utils.c
 SRV_SRC = ft_server.c
 CL_SRC = ft_client.c
 
@@ -32,7 +32,6 @@ clean:
 	rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ)
 
 fclean:
-	@make fclean -C $(LIBFT_PATH)
 	rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ) $(SRV_NAME) $(CL_NAME)
 
 re	: fclean	all

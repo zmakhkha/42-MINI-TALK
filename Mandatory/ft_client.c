@@ -6,14 +6,18 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:26 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/11 12:43:41 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:00:46 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"mandatory.h"
+#include "mandatory.h"
 
-int main()
+int	main(int c, char **v)
 {
-	
+	int	pid;
+
+	(void)c;
+	pid = ft_atoi(v[1]);
+	kill(pid, SIGUSR1);
 	return (0);
 }
