@@ -6,40 +6,53 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:26 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/13 19:08:07 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:06:02 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mandatory.h"
 
-int	main(int c, char **v)
+
+void f(char *a, int pid)
 {
-	int		pid;
-	int		j;
-	int		k;
+	int k;
+	int j;
 	char	tmp;
 
-	parse_it(c ,v, 1);
-	(void)c;
-	pid = ft_atoi(v[1]);
-
-	printf("%d", !!((tmp << j) & 0x80));
 	k = 0;
-	while (v[1][k])
+	while (a[k])
 	{
-		tmp = v[1][k];
+		tmp = a[k];
 		j = 0;
-		while (j < 7)
+		while (j < 8)
 		{
 			if (!!((tmp << j) & 0x80))
-				kill(pid, SIGUSR1);
+			{
+				kill(pid, SIGUSR1); // send 1
+				//write(1, "1", 1);
+			}
 			else
-				kill(pid, SIGUSR2);
+			{
+				kill(pid, SIGUSR2); // send 0
+				//write(1, "0", 1);
+			}
 			j++;
+			usleep(750);
 		}
 		k++;
 	}
+}
+
+
+int	main(int c, char **v)
+{
+	int		pid;
+
+	parse_it(c ,v);
+	pid = ft_atoi(v[1]);
+	f(v[2], pid);
 	printf("\n");
 		
 	return (0);
 }
+
