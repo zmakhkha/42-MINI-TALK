@@ -6,12 +6,12 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:06:32 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/20 19:01:26 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/21 11:00:29 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mandatory.h"
-char c = 0;
+unsigned char c = 0;
 
 void signal_handler(int signum)
 {
