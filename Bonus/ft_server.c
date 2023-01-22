@@ -6,14 +6,16 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:08 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/22 18:00:13 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:07:31 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mandatory.h"
 
-void	ft_print_reset(int *i, unsigned char *c)
+void	ft_print_reset(int *i, unsigned char *c, pid_t pid)
 {
+	if (c == 0)
+		kill(pid, SIGUSR1);
 	write(1, c, 1);
 	*c = 0;
 	*i = 0;
@@ -43,7 +45,7 @@ void	signal_handler(int signum, siginfo_t *info, void *ptr)
 		i++;
 	}
 	if (i == 8)
-		ft_print_reset(&i, &c);
+		ft_print_reset(&i, &c, pid);
 }
 
 int	main(void)

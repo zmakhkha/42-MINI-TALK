@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:26 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/22 17:53:03 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:04:04 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ void	ft_send_char(int pid, unsigned char c)
 	}
 }
 
+void	signal_handler1(int signum, siginfo_t *info, void *ptr)
+{
+	(void) info;
+	(void) ptr;
+	if (signum == SIGUSR1)
+		write(1, "VU !!\n", ft_strlen("VU !!\n"));
+}
+
 void	f(char *a, int pid)
 {
 	int	k;
@@ -40,8 +48,11 @@ void	f(char *a, int pid)
 
 int	main(int c, char **v)
 {
-	pid_t	pid;
+	int					pid;
+	struct sigaction	sa;
 
+	sa.sa_sigaction = signal_handler1;
+	sigaction(SIGUSR1, &sa, NULL);
 	parse_it(c, v);
 	pid = ft_atoi(v[1]);
 	f(v[2], pid);
