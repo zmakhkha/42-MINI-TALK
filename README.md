@@ -1,14 +1,14 @@
 # MINI-TALK
 
-`<img src="Subject/en.subject-1.jpg"/>`
-`<img src="Subject/en.subject-2.jpg"/>`
-`<img src="Subject/en.subject-3.jpg"/>`
-`<img src="Subject/en.subject-4.jpg"/>`
-`<img src="Subject/en.subject-5.jpg"/>`
-`<img src="Subject/en.subject-6.jpg"/>`
-`<img src="Subject/en.subject-7.jpg"/>`
-`<img src="Subject/en.subject-8.jpg"/>`
-`<img src="Subject/en.subject-9.jpg"/>`
+<img src="Subject/en.subject-1.jpg"/>
+<img src="Subject/en.subject-2.jpg"/>
+<img src="Subject/en.subject-3.jpg"/>
+<img src="Subject/en.subject-4.jpg"/>
+<img src="Subject/en.subject-5.jpg"/>
+<img src="Subject/en.subject-6.jpg"/>
+<img src="Subject/en.subject-7.jpg"/>
+<img src="Subject/en.subject-8.jpg"/>
+<img src="Subject/en.subject-9.jpg"/>
 
 
 # Signal Communication
