@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:08 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/23 09:31:18 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:24:37 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_reset(int *i, unsigned char *c, pid_t pid)
 {
-	if (c == 0)
+	if (*c == 0)
 		kill(pid, SIGUSR1);
 	write(1, c, 1);
 	*c = 0;
@@ -30,7 +30,7 @@ void	signal_handler(int signum, siginfo_t *info, void *ptr)
 	(void)ptr;
 	if (pid != info-> si_pid)
 	{
-		c = 0;
+		c = 0b00000000;
 		i = 0;
 		pid = info->si_pid;
 	}

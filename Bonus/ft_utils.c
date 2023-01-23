@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:06:32 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/23 09:25:51 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/23 10:59:06 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,21 @@ void	parse_it(int n, char **c)
 {
 	if (n != 3 || ft_atoi(c[1]) <= 0)
 		ft_print_error("ERROR !!");
+}
+
+void	ft_isnumber(char *number)
+{
+	int	i;
+
+	i = 0;
+	if (number[0] == '+')
+		i++;
+	if (!number[i])
+		ft_print_error("Error");
+	while (number[i])
+	{
+		if (!ft_isdigit(number[i]))
+			ft_print_error("Error");
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:08 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/22 18:00:13 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/23 09:41:26 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	signal_handler(int signum, siginfo_t *info, void *ptr)
 
 int	main(void)
 {
-	int					pid;
+	pid_t				pid;
 	struct sigaction	sa;
 
 	pid = getpid();
@@ -56,7 +56,6 @@ int	main(void)
 	ft_putnbr_fd(pid, 1);
 	write(1, "\n", 1);
 	sa.sa_sigaction = signal_handler;
-	sa.sa_flags = SA_NODEFER;
 	while (1)
 	{
 		sigaction(SIGUSR1, &sa, NULL);

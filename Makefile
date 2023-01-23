@@ -30,30 +30,30 @@ CFLAGS = -Wextra -Wall -Werror
 all:  SRC_R $(SRV_NAME) $(CL_NAME)
 
 $(SRV_NAME) : $(SRV_OBJ)
-	@$(CC) $(SRC_OBJ) $(SRV_SRC) $(LIBFT_PATH)/libft.a -o $(SRV_NAME)
+	$(CC) $(SRC_OBJ) $(SRV_SRC) $(LIBFT_PATH)/libft.a -o $(SRV_NAME)
 
 $(CL_NAME) : $(CL_OBJ)
-	@$(CC) $(SRC) $(CL_SRC) $(LIBFT_PATH)/libft.a -o $(CL_NAME)
+	$(CC) $(SRC) $(CL_SRC) $(LIBFT_PATH)/libft.a -o $(CL_NAME)
 
 $(SRV_NAME_BNS) : $(SRV_OBJ_BNS)
-	@$(CC) $(SRC_OBJ_BNS) $(SRV_SRC_BNS) $(LIBFT_PATH)/libft.a -o $(SRV_NAME_BNS)
+	$(CC) $(SRC_OBJ_BNS) $(SRV_SRC_BNS) $(LIBFT_PATH)/libft.a -o $(SRV_NAME_BNS)
 
 $(CL_NAME_BNS) : $(CL_OBJ_BNS)
-	@$(CC) $(SRC_BNS) $(CL_SRC_BNS) $(LIBFT_PATH)/libft.a -o $(CL_NAME_BNS)
+	$(CC) $(SRC_BNS) $(CL_SRC_BNS) $(LIBFT_PATH)/libft.a -o $(CL_NAME_BNS)
 
 SRC_R : $(SRC_OBJ)
-	@make -C $(LIBFT_PATH)
+	make -C $(LIBFT_PATH)
 
 SRC_B : $(SRC_OBJ_BNS)
 
 %.o : %.c Mandatory/mandatory.h
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ) $(CL_OBJ_BNS) $(SRV_OBJ_BNS) $(SRC_OBJ_BNS)
+	rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ) $(CL_OBJ_BNS) $(SRV_OBJ_BNS) $(SRC_OBJ_BNS)
 
 fclean:
-	@rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ) $(SRV_NAME) $(CL_NAME) $(CL_OBJ_BNS) $(SRV_OBJ_BNS) $(SRC_OBJ_BNS) $(SRV_NAME_BNS) $(CL_NAME_BNS)
+	rm -f $(CL_OBJ) $(SRV_OBJ) $(SRC_OBJ) $(SRV_NAME) $(CL_NAME) $(CL_OBJ_BNS) $(SRV_OBJ_BNS) $(SRC_OBJ_BNS) $(SRV_NAME_BNS) $(CL_NAME_BNS)
 
 re	: fclean	all
 
