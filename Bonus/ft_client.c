@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:26 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/22 18:04:04 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/23 09:24:09 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mandatory.h"
+#include "../Mandatory/mandatory.h"
 
 void	ft_send_char(int pid, unsigned char c)
 {

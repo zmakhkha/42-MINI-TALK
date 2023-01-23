@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:42:08 by zmakhkha          #+#    #+#             */
-/*   Updated: 2023/01/22 18:07:31 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2023/01/23 09:31:18 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mandatory.h"
+#include "../Mandatory/mandatory.h"
 
 void	ft_print_reset(int *i, unsigned char *c, pid_t pid)
 {
@@ -58,7 +58,6 @@ int	main(void)
 	ft_putnbr_fd(pid, 1);
 	write(1, "\n", 1);
 	sa.sa_sigaction = signal_handler;
-	sa.sa_flags = SA_NODEFER;
 	while (1)
 	{
 		sigaction(SIGUSR1, &sa, NULL);
